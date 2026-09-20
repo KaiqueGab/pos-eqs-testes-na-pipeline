@@ -10,16 +10,16 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4+
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.13.5'
+          python-version: "3.13"
 
       - name: Install dependencies
         run: |
-          pip install pytest
-          pip install allure-pytest
+          python -m pip install --upgrade pip
+          python -m pip install pytest allure-pytest
 
       - name: Run tests
         run: |
-          pytest --alluredir=allure-results
+          pytest soma_ead --alluredir=allure-results
         
