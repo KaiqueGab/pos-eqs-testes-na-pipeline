@@ -1,0 +1,24 @@
+name: CI - Automated Tests
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4+
+        with:
+          python-version: '3.13.5'
+
+        run: |
+          pip install pytest
+          pip install allure-pytest
+
+      - name: Run tests
+        run: |
+          pytest --alluredir=allure-results
+        
