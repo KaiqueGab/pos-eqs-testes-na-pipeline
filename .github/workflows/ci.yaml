@@ -1,10 +1,21 @@
 name: CI - Automated Tests
 
-on: [push, pull_request]
+#Define o evento que ira disparar o workflow
+on: 
+  #Dispara o workflow quando houver um push/pull_request para a branch main
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
+#Definem os jobs que serao executados no workflow
 jobs:
+  #Define o job "build"
   build:
+    #Define o ambiente onde o job sera executado
     runs-on: ubuntu-latest
+
+    #Define os passos que serao executados no job
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
