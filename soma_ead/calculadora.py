@@ -7,11 +7,11 @@ def test_soma_positiva():
         resultado = soma(2, 3)
     allure.attach(str(resultado), name="Resultado de soma positiva", attachment_type=allure.attachment_type.TEXT)
     assert resultado == 5
-    
-def test_soma_negativa():
-    with allure.step("Testando soma de dois números positivos"):
+
+def test_subtracao_negativa():
+    with allure.step("Testando subtração de dois números negativos"):
         resultado = soma(-2, -3)
-    allure.attach(str(resultado), name="Resultado de soma negativa", attachment_type=allure.attachment_type.TEXT)
+    allure.attach(str(resultado), name="Resultado de subtração negativa", attachment_type=allure.attachment_type.TEXT)
     assert resultado == -5
 
 def test_divisão_zero():
