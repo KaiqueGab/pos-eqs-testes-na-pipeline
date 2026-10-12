@@ -3,6 +3,7 @@ name: CI - Automated Tests
 #Define o evento que ira disparar o workflow
 on: 
   #Dispara o workflow quando houver um push/pull_request para a branch main
+  workflow_dispatch:
   push:
     branches: [ main ]
   pull_request:
