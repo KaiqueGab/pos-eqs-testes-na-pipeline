@@ -23,4 +23,8 @@ def test_divisão_zero():
     allure.attach(str(erro.value), name="Erro de divisão com zero",attachment_type=allure.attachment_type.TEXT)
 
 def test_soma_valor_alto():
-    assert soma(23233, 23233) == 46466
+    with allure.step("Testando soma de dois números positivos"):
+            resultado = soma(123123, 1232312)
+    allure.attach(str(resultado), name="Resultado de soma positiva", attachment_type=allure.attachment_type.TEXT)
+    assert resultado == 13
+    
